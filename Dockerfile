@@ -41,15 +41,15 @@ RUN cmake .. \
  && make DESTDIR=/newroot install      # staged for the final image
 
 # ───────────────────────── SoapyPlutoPAPR driver ────────────────────────────
-RUN cd /tmp && \
-    git clone --depth 1 https://github.com/F5OEO/SoapyPlutoPAPR.git && \
-    cmake -S SoapyPlutoPAPR -B SoapyPlutoPAPR/build \
-          -DCMAKE_INSTALL_PREFIX=/usr \
-          -DCMAKE_INSTALL_LIBDIR=lib/x86_64-linux-gnu && \
-          -DCMAKE_POLICY_VERSION_MINIMUM=3.5 && \
-    cmake --build SoapyPlutoPAPR/build -- -j"$(nproc)" && \
-    DESTDIR=/newroot cmake --install SoapyPlutoPAPR/build && \
-    rm -rf SoapyPlutoPAPR
+# RUN cd /tmp && \
+#     git clone --depth 1 https://github.com/F5OEO/SoapyPlutoPAPR.git && \
+#     cmake -S SoapyPlutoPAPR -B SoapyPlutoPAPR/build \
+#           -DCMAKE_INSTALL_PREFIX=/usr \
+#           -DCMAKE_INSTALL_LIBDIR=lib/x86_64-linux-gnu && \
+#           -DCMAKE_POLICY_VERSION_MINIMUM=3.5 && \
+#     cmake --build SoapyPlutoPAPR/build -- -j"$(nproc)" && \
+#     DESTDIR=/newroot cmake --install SoapyPlutoPAPR/build && \
+#     rm -rf SoapyPlutoPAPR
 
 ###############################################################################
 # Stage 2 – lightweight runtime image                                         #
@@ -69,7 +69,7 @@ RUN apt-get update && apt-get -y upgrade && \
         libairspyhf1 libfreesrp0 librtlsdr0 libxtrx0 \
         libsoapysdr0.8 \
         # NOTE: we intentionally **skip** Ubuntu’s plutosdr module
-        # libsoapysdr0.8-module-all \
+        libsoapysdr0.8-module-all \
     # ── run-time deps for SoapyPlutoPAPR ─────────────────────────────────────
         libiio0 libad9361-0 \
     && rm -rf /var/lib/apt/lists/* \
