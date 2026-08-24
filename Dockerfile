@@ -46,6 +46,7 @@ RUN cd /tmp && \
     cmake -S SoapyPlutoPAPR -B SoapyPlutoPAPR/build \
           -DCMAKE_INSTALL_PREFIX=/usr \
           -DCMAKE_INSTALL_LIBDIR=lib/x86_64-linux-gnu && \
+          -DCMAKE_POLICY_VERSION_MINIMUM=3.5 && \
     cmake --build SoapyPlutoPAPR/build -- -j"$(nproc)" && \
     DESTDIR=/newroot cmake --install SoapyPlutoPAPR/build && \
     rm -rf SoapyPlutoPAPR
