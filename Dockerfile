@@ -63,7 +63,7 @@ RUN apt-get update && apt-get -y upgrade && \
         ca-certificates curl wget sox fdkaac docker.io \
         libboost-chrono1.90.0 libboost-log1.90.0 \
         libgnuradio-analog3.10.12 libgnuradio-digital3.10.12 \
-        libgnuradio-filter3.10.12 libgnuradio-network3.10.12 \
+        libgnuradio-filter3.10.12 libgnuradio-iio3.10.12 libgnuradio-network3.10.12 \
         libgnuradio-osmosdr0.2.0t64 libgnuradio-uhd3.10.12 \
         libpaho-mqtt-dev libpaho-mqttpp-dev \
         libairspyhf1 libfreesrp0 librtlsdr0 libxtrx0 \
