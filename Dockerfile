@@ -9,7 +9,7 @@ ENV DEBIAN_FRONTEND=noninteractive
 RUN apt-get update && apt-get -y upgrade && \
     apt-get install --no-install-recommends -y \
     # ── toolchain ────────────────────────────────────────────────────────────
-        build-essential cmake git curl pkg-config wget \
+        build-essential ca-certificates cmake git curl pkg-config wget \
     # ── SDR headers/libs for trunk-recorder + Soapy build ───────────────────
         ffmpeg gnuradio-dev gr-osmosdr libosmosdr-dev \
         libairspy-dev libairspyhf-dev libbladerf-dev libfreesrp-dev \
@@ -61,11 +61,11 @@ RUN apt-get update && apt-get -y upgrade && \
     # ── trunk-recorder runtime deps ──────────────────────────────────────────
         ca-certificates curl wget sox fdkaac docker.io \
         libboost-chrono1.83.0t64 libboost-log1.83.0 \
-        libgnuradio-analog3.10.9t64 libgnuradio-digital3.10.9t64 \
-        libgnuradio-filter3.10.9t64 libgnuradio-network3.10.9t64 \
-        libgnuradio-osmosdr0.2.0t64 libgnuradio-uhd3.10.9t64 \
+        libgnuradio-analog3.10.12 libgnuradio-digital3.10.12 \
+        libgnuradio-filter3.10.12 libgnuradio-network3.10.12 \
+        libgnuradio-osmosdr0.2.0t64 libgnuradio-uhd3.10.12 \
         libpaho-mqtt-dev libpaho-mqttpp-dev \
-        libairspyhf1 libfreesrp0 librtlsdr2 libxtrx0 \
+        libairspyhf1 libfreesrp0 librtlsdr0 libxtrx0 \
         libsoapysdr0.8 \
         # NOTE: we intentionally **skip** Ubuntu’s plutosdr module
         # libsoapysdr0.8-module-all \
