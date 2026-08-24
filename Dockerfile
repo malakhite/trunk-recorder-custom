@@ -60,7 +60,7 @@ ENV DEBIAN_FRONTEND=noninteractive
 RUN apt-get update && apt-get -y upgrade && \
     apt-get install --no-install-recommends -y \
     # ── trunk-recorder runtime deps ──────────────────────────────────────────
-        ca-certificates curl wget sox fdkaac docker.io \
+        ca-certificates curl wget sox fdkaac docker.io ffmpeg \
         libboost-chrono1.90.0 libboost-log1.90.0 \
         libgnuradio-analog3.10.12 libgnuradio-digital3.10.12 \
         libgnuradio-filter3.10.12 libgnuradio-iio3.10.12 libgnuradio-network3.10.12 \
@@ -68,9 +68,7 @@ RUN apt-get update && apt-get -y upgrade && \
         libpaho-mqtt-dev libpaho-mqttpp-dev \
         libairspyhf1 libfreesrp0 librtlsdr0 libxtrx0 \
         libsoapysdr0.8 \
-        # NOTE: we intentionally **skip** Ubuntu’s plutosdr module
         soapysdr0.8-module-all \
-    # ── run-time deps for SoapyPlutoPAPR ─────────────────────────────────────
         libiio0 libad9361-0 \
     && rm -rf /var/lib/apt/lists/* \
     && rm -rf /usr/share/{doc,man,info} /usr/local/share/{doc,man,info}
