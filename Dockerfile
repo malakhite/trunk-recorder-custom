@@ -69,7 +69,7 @@ RUN apt-get update && apt-get -y upgrade && \
         libairspyhf1 libfreesrp0 librtlsdr0 libxtrx0 \
         libsoapysdr0.8 \
         # NOTE: we intentionally **skip** Ubuntu’s plutosdr module
-        libsoapysdr0.8-module-all \
+        soapysdr0.8-module-all \
     # ── run-time deps for SoapyPlutoPAPR ─────────────────────────────────────
         libiio0 libad9361-0 \
     && rm -rf /var/lib/apt/lists/* \
