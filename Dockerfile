@@ -61,7 +61,7 @@ RUN apt-get update && apt-get -y upgrade && \
     apt-get install --no-install-recommends -y \
     # ── trunk-recorder runtime deps ──────────────────────────────────────────
         ca-certificates curl wget sox fdkaac docker.io \
-        libboost-chrono1.83.0t64 libboost-log1.83.0 \
+        libboost-chrono1.90.0 libboost-log1.90.0 \
         libgnuradio-analog3.10.12 libgnuradio-digital3.10.12 \
         libgnuradio-filter3.10.12 libgnuradio-network3.10.12 \
         libgnuradio-osmosdr0.2.0t64 libgnuradio-uhd3.10.12 \
